@@ -6,7 +6,7 @@
 /*   By: nlewicki <nlewicki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 11:19:54 by nlewicki          #+#    #+#             */
-/*   Updated: 2024/04/02 15:39:01 by nlewicki         ###   ########.fr       */
+/*   Updated: 2024/03/12 12:18:35 by nlewicki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,12 @@ void	*ft_memmove(void *str1, const void *str2, size_t n)
 // int	main (void)
 // {
 // 	const char	src[] = "Hello, World123";
-// 	char	dest[] = "Heloooo!!";
+// 	char	dest[] = "hellooooo!!";
 // 	printf("Before memmove dest = %s\n", dest);
 // 	printf("%s\n", memmove(dest, src, 7));
 
 // 	const char	src2[] = "Hello, World123";
-// 	char	dest2[] = "Heloooo!!";
+// 	char	dest2[] = "hellooooo!!";
 // 	printf("%s\n", ft_memmove(dest2, src2, 7));
 // 	return(0);
 // }

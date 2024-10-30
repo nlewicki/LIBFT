@@ -6,7 +6,7 @@
 /*   By: nlewicki <nlewicki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 12:13:33 by nlewicki          #+#    #+#             */
-/*   Updated: 2024/04/02 15:38:50 by nlewicki         ###   ########.fr       */
+/*   Updated: 2024/03/18 13:33:54 by nlewicki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,13 +55,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 // int	main(void)
 // {
-// 	char const *s = "Hello World";
-// 	unsigned int start = 6;
-// 	size_t len = 5;
-// 	char *substr;
+// 	char	str[] = "halloiadsa";
+// 	int		start = 15;
+// 	size_t	len = 5;
 
-// 	substr = ft_substr(s, start, len);
-// 	printf("Substring: %s\n", substr);
-// 	free(substr);
+// 	printf ("%s\n", ft_substr(str, start, len));
 // 	return (0);
 // }

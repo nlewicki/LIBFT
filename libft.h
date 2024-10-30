@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nlewicki <nlewicki@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mhummel <mhummel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 13:13:20 by nlewicki          #+#    #+#             */
-/*   Updated: 2024/03/18 13:40:18 by nlewicki         ###   ########.fr       */
+/*   Updated: 2024/10/23 14:57:44 by mhummel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,11 @@
 # include <stdio.h>
 # include <strings.h>
 # include <ctype.h>
+# include <stdbool.h>
+# include <errno.h>
 
 int		ft_atoi(const char *str);
+long	ft_atol(const char *str);
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t count, size_t size);
 int		ft_isalnum(int c);
@@ -52,11 +55,25 @@ char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	**ft_split(char const *s, char c);
+int		ft_strcmp(const char *s1, const char *s2);
+char	*ft_strtok(char *str, const char *delim);
+bool	ft_isspace(int c);
+char	*ft_strndup(const char *s, size_t n);
+size_t	ft_strcpy(char *dst, const char *src);
+char	*ft_strtok_r(char *str, const char *delim, char **saveptr);
+size_t	ft_strspn(const char *str, const char *accept);
+size_t	ft_strcspn(const char *str, const char *reject);
+void	*ft_realloc(void *ptr, size_t old_size, size_t new_size);
+void	ft_err(char *s1, char *s2, char *s3);
+char	*ft_strjoin3(const char *s1, const char *s2, const char *s3);
+char	*ft_strerror(int errnum);
+
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }	t_list;
+
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);

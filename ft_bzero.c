@@ -6,7 +6,7 @@
 /*   By: nlewicki <nlewicki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 10:40:05 by nlewicki          #+#    #+#             */
-/*   Updated: 2024/04/02 15:39:23 by nlewicki         ###   ########.fr       */
+/*   Updated: 2024/03/12 12:19:21 by nlewicki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_bzero(void *s, size_t n)
 // int	main(void)
 // {
 // 	char s2[30] = "Hallo, welt";
-// 	size_t num = 5;
+// 	size_t num = 3;
 // 	char s3[] = "Hallo, welt";
 
 // 	printf("origin: %s\n", s2);

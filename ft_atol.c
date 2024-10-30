@@ -1,46 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nlewicki <nlewicki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/11 11:31:37 by nlewicki          #+#    #+#             */
-/*   Updated: 2024/10/03 10:57:49 by nlewicki         ###   ########.fr       */
+/*   Created: 2024/03/07 11:55:34 by nlewicki          #+#    #+#             */
+/*   Updated: 2024/05/13 13:42:46 by nlewicki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+long int	ft_atol(const char *str)
 {
-	size_t	len;
-	size_t	i;
-	char	*dup;
+	int			i;
+	int			sign;
+	long int	result;
 
-	if (s1 == NULL)
-		return (NULL);
-	len = 0;
-	while (s1[len] != '\0')
-		len++;
-	dup = (char *)malloc((len + 1) * sizeof(char));
-	if (dup == NULL)
-		return (NULL);
+	sign = 1;
 	i = 0;
-	while (i < len)
+	result = 0;
+	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
 	{
-		dup[i] = s1[i];
 		i++;
 	}
-	dup[len] = '\0';
-	return (dup);
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			sign *= -1;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		result = result * 10 + (str[i] - 48);
+		i++;
+	}
+	return (result * sign);
 }
 
 // int	main(void)
 // {
-// 	char	str[] = "hallowerlt";
+// 	char str[] = "   		-+-23453653bdbd34";
 
-// 	printf("%s\n", strdup(str));
-// 	printf("%s\n", ft_strdup(str));
+// 	printf ("%d\n", ft_atoi(str));
+// 	printf ("%d\n", atoi(str));
 // 	return (0);
-// }
+// 	}

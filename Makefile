@@ -3,15 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nlewicki <nlewicki@student.42.fr>          +#+  +:+       +#+         #
+#    By: mhummel <mhummel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/12 11:07:18 by nlewicki          #+#    #+#              #
-#    Updated: 2024/03/18 13:12:57 by nlewicki         ###   ########.fr        #
+#    Updated: 2024/10/23 12:34:43 by mhummel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-files = ft_bzero.c \
+FILES = ft_bzero.c \
 		ft_atoi.c \
+		ft_atol.c \
 		ft_calloc.c \
 		ft_isalpha.c \
 		ft_isalnum.c \
@@ -44,8 +45,7 @@ files = ft_bzero.c \
 		ft_strmapi.c \
 		ft_striteri.c \
 		ft_split.c \
-
-bonus = ft_lstnew_bonus.c \
+		ft_lstnew_bonus.c \
 		ft_lstadd_front_bonus.c \
 		ft_lstsize_bonus.c \
 		ft_lstlast_bonus.c \
@@ -54,31 +54,46 @@ bonus = ft_lstnew_bonus.c \
 		ft_lstclear_bonus.c \
 		ft_lstiter_bonus.c \
 		ft_lstmap_bonus.c \
+		ft_strcmp.c \
+		ft_strtok.c \
+		ft_isspace.c \
+		ft_strndup.c \
+		ft_strcpy.c \
+		ft_strtok_r.c \
+		ft_strspn.c \
+		ft_strcspn.c \
+		ft_realloc.c \
+		ft_err.c \
+		ft_strjoin3.c \
+		ft_strerror.c \
+		get_next_line.c \
+		get_next_line_utils.c
 
-Compiler = cc
-CmpFlags = -Wall -Wextra -Werror
-CFILES   = $(files)
-OFILES   = $(files:.c=.o)
-NAME     = libft.a
+CC		= cc
+CFLAGS	= -Wall -Wextra -Werror
+OBJ_DIR	= Obj_libft
+OFILES	= $(addprefix $(OBJ_DIR)/,$(notdir $(FILES:.c=.o)))
+NAME	= libft.a
 
-$(NAME): $(OFILES)
-	$(AR) -r $@ $?
+$(NAME): $(OBJ_DIR) $(OFILES)
+	@ar rsc $(NAME) $(OFILES)
 
-%.o: %.c
-	$(Compiler) -c $(CmpFlags) $?
+$(OBJ_DIR)/%.o: %.c
+	@$(CC) -c $(CFLAGS) $< -o $@
+
+$(OBJ_DIR):
+	@echo "\033[35mCompiling $(NAME)\033[0m"
+	@mkdir -p $(OBJ_DIR)
 
 all: $(NAME)
 
 clean:
-	rm -f $(OFILES) $(bonus:.c=.o)
+	@rm -rf $(OBJ_DIR)
+	@rm -f $(OFILES)
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all
 
-bonus: $(bonus:.c=.o)
-	$(AR) -r $(NAME) $?
-
-.PHONY: all, clean, fclean, re, bonus
-
+.PHONY: all, clean, fclean, re

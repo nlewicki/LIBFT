@@ -1,25 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_strspn.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nlewicki <nlewicki@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mhummel <mhummel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/14 14:27:51 by nlewicki          #+#    #+#             */
-/*   Updated: 2024/03/14 14:33:34 by nlewicki         ###   ########.fr       */
+/*   Created: 2024/09/17 13:05:56 by mhummel           #+#    #+#             */
+/*   Updated: 2024/09/17 13:07:32 by mhummel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+size_t	ft_strspn(const char *str, const char *accept)
 {
-	int	i;
+	const char	*s = str;
+	const char	*a;
 
-	i = 0;
-	while (s[i] != '\0')
+	while (*s)
 	{
-		f(i, &s[i]);
-		i++;
+		a = accept;
+		while (*a)
+		{
+			if (*s == *a)
+			{
+				break ;
+			}
+			a++;
+		}
+		if (*a == '\0')
+		{
+			return (s - str);
+		}
+		s++;
 	}
+	return (s - str);
 }

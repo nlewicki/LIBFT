@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_err.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nlewicki <nlewicki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/14 14:27:51 by nlewicki          #+#    #+#             */
-/*   Updated: 2024/03/14 14:33:34 by nlewicki         ###   ########.fr       */
+/*   Created: 2024/09/19 11:01:09 by nlewicki          #+#    #+#             */
+/*   Updated: 2024/09/19 11:13:40 by nlewicki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_err(char *s1, char *s2, char *s3)
 {
-	int	i;
-
-	i = 0;
-	while (s[i] != '\0')
-	{
-		f(i, &s[i]);
-		i++;
-	}
+	if (s1)
+		write(2, s1, ft_strlen(s1));
+	if (s2)
+		write(2, s2, ft_strlen(s2));
+	if (s3)
+		write(2, s3, ft_strlen(s3));
 }

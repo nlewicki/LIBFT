@@ -1,46 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nlewicki <nlewicki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/11 11:31:37 by nlewicki          #+#    #+#             */
-/*   Updated: 2024/10/03 10:57:49 by nlewicki         ###   ########.fr       */
+/*   Created: 2024/09/12 13:24:17 by mhummel           #+#    #+#             */
+/*   Updated: 2024/10/22 13:41:54 by nlewicki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <string.h>
 
-char	*ft_strdup(const char *s1)
+static size_t	ft_strnlen(const char *s, size_t maxlen)
 {
 	size_t	len;
-	size_t	i;
-	char	*dup;
 
-	if (s1 == NULL)
-		return (NULL);
 	len = 0;
-	while (s1[len] != '\0')
+	while (len < maxlen && s[len])
 		len++;
-	dup = (char *)malloc((len + 1) * sizeof(char));
-	if (dup == NULL)
-		return (NULL);
-	i = 0;
-	while (i < len)
-	{
-		dup[i] = s1[i];
-		i++;
-	}
-	dup[len] = '\0';
-	return (dup);
+	return (len);
 }
 
-// int	main(void)
-// {
-// 	char	str[] = "hallowerlt";
+char	*ft_strndup(const char *s, size_t n)
+{
+	char	*result;
+	size_t	len;
 
-// 	printf("%s\n", strdup(str));
-// 	printf("%s\n", ft_strdup(str));
-// 	return (0);
-// }
+	len = ft_strnlen(s, n);
+	result = (char *)malloc(len + 1);
+	if (!result)
+		return (NULL);
+	result[len] = '\0';
+	return ((char *)ft_memcpy(result, s, len));
+}
