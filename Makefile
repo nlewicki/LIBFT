@@ -3,16 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mhummel <mhummel@student.42.fr>            +#+  +:+       +#+         #
+#    By: nlewicki <nlewicki@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/12 11:07:18 by nlewicki          #+#    #+#              #
-#    Updated: 2024/10/23 12:34:43 by mhummel          ###   ########.fr        #
+#    Updated: 2025/04/07 11:44:32 by nlewicki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 FILES = ft_bzero.c \
 		ft_atoi.c \
 		ft_atol.c \
+		ft_atof.c \
 		ft_calloc.c \
 		ft_isalpha.c \
 		ft_isalnum.c \
