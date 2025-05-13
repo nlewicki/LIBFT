@@ -6,7 +6,7 @@
 /*   By: nlewicki <nlewicki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 10:48:55 by nlewicki          #+#    #+#             */
-/*   Updated: 2025/04/21 13:07:39 by nlewicki         ###   ########.fr       */
+/*   Updated: 2025/05/13 12:17:37 by nlewicki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 void	*ft_realloc(void *ptr, size_t new_size)
 {
-	void *new_ptr;
-	size_t copy_size;
+	void	*new_ptr;
+	size_t	copy_size;
+
 	if (new_size == 0)
 	{
 		free(ptr);
@@ -26,9 +27,7 @@ void	*ft_realloc(void *ptr, size_t new_size)
 	new_ptr = malloc(new_size);
 	if (!new_ptr)
 		return (NULL);
-	// Copy as much as possible; assume ptr was allocated with enough space
-	// This is a simplification since we can't know the old size
-	copy_size = new_size; // This is a compromise; see notes below
+	copy_size = new_size;
 	ft_memcpy(new_ptr, ptr, copy_size);
 	free(ptr);
 	return (new_ptr);
