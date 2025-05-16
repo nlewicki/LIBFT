@@ -6,7 +6,7 @@
 /*   By: nlewicki <nlewicki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 13:13:20 by nlewicki          #+#    #+#             */
-/*   Updated: 2025/04/21 13:07:02 by nlewicki         ###   ########.fr       */
+/*   Updated: 2025/05/13 12:29:38 by nlewicki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	**ft_split(char const *s, char c);
+char	**ft_split_whitespace(char const *s);
 int		ft_strcmp(const char *s1, const char *s2);
 char	*ft_strtok(char *str, const char *delim);
 bool	ft_isspace(int c);

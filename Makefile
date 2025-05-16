@@ -6,7 +6,7 @@
 #    By: nlewicki <nlewicki@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/12 11:07:18 by nlewicki          #+#    #+#              #
-#    Updated: 2025/04/07 11:44:32 by nlewicki         ###   ########.fr        #
+#    Updated: 2025/05/13 12:30:54 by nlewicki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,6 +46,7 @@ FILES = ft_bzero.c \
 		ft_strmapi.c \
 		ft_striteri.c \
 		ft_split.c \
+		ft_split_whitespace.c \
 		ft_lstnew_bonus.c \
 		ft_lstadd_front_bonus.c \
 		ft_lstsize_bonus.c \
