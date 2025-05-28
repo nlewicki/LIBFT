@@ -6,7 +6,7 @@
 /*   By: nlewicki <nlewicki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 13:13:20 by nlewicki          #+#    #+#             */
-/*   Updated: 2025/05/27 14:52:51 by nlewicki         ###   ########.fr       */
+/*   Updated: 2025/05/28 12:01:18 by nlewicki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ long	ft_atol(const char *str);
 float	ft_atof(const char *str);
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t count, size_t size);
+double	ft_strtod(const char *str, char **endptr);
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
 int		ft_isascii(int c);

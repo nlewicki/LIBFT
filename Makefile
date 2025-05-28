@@ -6,7 +6,7 @@
 #    By: nlewicki <nlewicki@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/12 11:07:18 by nlewicki          #+#    #+#              #
-#    Updated: 2025/05/13 12:30:54 by nlewicki         ###   ########.fr        #
+#    Updated: 2025/05/28 12:01:38 by nlewicki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ FILES = ft_bzero.c \
 		ft_isascii.c \
 		ft_isdigit.c \
 		ft_isprint.c \
+		ft_strtod.c \
 		ft_memchr.c \
 		ft_memcmp.c \
 		ft_memcpy.c \
